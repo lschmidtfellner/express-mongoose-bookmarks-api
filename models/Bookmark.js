@@ -1,6 +1,5 @@
 import mongoose from 'mongoose'
 
-
 let bookmarkSchema = new mongoose.Schema({
     title: String,
     url: String

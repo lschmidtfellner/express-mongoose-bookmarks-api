@@ -10,6 +10,7 @@ dotenv.config()
 
 const app = express();
 
+// FIND ALL BOOKMARKS
 app.get("/", function(req, res) {
     Bookmark.find({}).then(bookmarks => res.json(bookmarks));
   });
