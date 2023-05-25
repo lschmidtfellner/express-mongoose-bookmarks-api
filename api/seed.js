@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
-import connection from './connection.js'
-import Bookmark from '../../models/Bookmark.js'
-import data from '../db/bookmarks.json' assert {type: 'json'}
+import connection from '../lib/db/connection.js'
+import Bookmark from '../models/Bookmark.js'
+import data from '../lib/db/bookmarks.json' assert {type: 'json'}
 
 console.log(data)
 

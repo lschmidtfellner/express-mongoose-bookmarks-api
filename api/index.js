@@ -1,6 +1,6 @@
 import express from 'express'
-import connection from './lib/db/connection.js';
-import Bookmark from './models/Bookmark.js';
+import connection from '../lib/db/connection.js';
+import Bookmark from '../models/Bookmark.js';
 import * as dotenv from 'dotenv'
 
 // const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bookmarks'
