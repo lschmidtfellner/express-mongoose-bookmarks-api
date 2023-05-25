@@ -11,16 +11,16 @@ dotenv.config()
 const app = express();
 
 // FIND ALL BOOKMARKS
-app.get("/", function(req, res) {
+app.get("/api", function(req, res) {
     Bookmark.find({}).then(bookmarks => res.json(bookmarks));
   });
 
-app.get("/test", (request, response) => {
+app.get("/api/test", (request, response) => {
 response.send("Test" + " Test");
 });
 
 // FIND ONE BOOKMARK
-app.get("/bookmarks/:id", function(req, res) {
+app.get("/api/bookmarks/:id", function(req, res) {
   Bookmark.findById(req.params.id)
     .then(bookmark => {
       if (!bookmark) {
@@ -32,14 +32,14 @@ app.get("/bookmarks/:id", function(req, res) {
 });
 
 // CREATE A BOOKMARK
-app.post("/bookmarks", function(req, res) {
+app.post("/api/bookmarks", function(req, res) {
   Bookmark.create(req.body)
     .then(bookmark => res.status(201).json(bookmark))
     .catch(error => res.status(500).json({ error: "Server error" }));
 });
 
 // DELETE A BOOKMARK
-app.delete("/bookmarks/:id", function(req, res) {
+app.delete("/api/bookmarks/:id", function(req, res) {
   Bookmark.findByIdAndRemove(req.params.id)
     .then(bookmark => {
       if (!bookmark) {
@@ -52,7 +52,7 @@ app.delete("/bookmarks/:id", function(req, res) {
 
 
 // UPDATE A BOOKMARK
-app.put("/bookmarks/:id", function(req, res) {
+app.put("/api/bookmarks/:id", function(req, res) {
   Bookmark.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then(bookmark => {
       if (!bookmark) {
@@ -64,7 +64,7 @@ app.put("/bookmarks/:id", function(req, res) {
 });
 
 
-
+export default app
 
 // LISTEN ON PORT
 // app.listen(PORT, () => {
