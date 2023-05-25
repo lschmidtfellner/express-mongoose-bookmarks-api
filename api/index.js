@@ -67,6 +67,6 @@ app.put("/bookmarks/:id", function(req, res) {
 
 
 // LISTEN ON PORT
-app.listen(PORT, () => {
-  console.log(`Server is listening on PORT: ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server is listening on PORT: ${PORT}`);
+// });
