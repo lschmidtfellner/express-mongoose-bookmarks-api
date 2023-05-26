@@ -10,6 +10,9 @@ dotenv.config()
 
 const app = express();
 
+// JSON middleware
+app.use(express.json());
+
 // FIND ALL BOOKMARKS
 app.get("/", function(req, res) {
     Bookmark.find({}).then(bookmarks => res.json(bookmarks));
